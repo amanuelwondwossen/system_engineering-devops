@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
-# Displays a message when receiving a SIGTERM signal
+# Displays To infinity and beyond and handles SIGTERM
 
-term_handler() {
-    echo "I am invincible!!!"
-}
-
-trap term_handler SIGTERM
+trap 'echo "I am invincible!!!"' SIGTERM
 
 while true
 do
     echo "To infinity and beyond"
-    sleep 2 &
-    wait $!
+    sleep 2
 done
