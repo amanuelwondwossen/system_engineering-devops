@@ -3,8 +3,8 @@
 
 trap 'echo "I am invincible!!!"' SIGTERM
 
-while true
-do
+while true; do
     echo "To infinity and beyond"
-    sleep 2
+    sleep 2 &   # 1. Puts sleep into the background
+    wait $!     # 2. Waits for the background process ($!)
 done
